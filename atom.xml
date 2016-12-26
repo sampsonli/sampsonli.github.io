@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.wxminapp.com/"/>
-  <updated>2016-12-26T04:21:28.395Z</updated>
+  <updated>2016-12-26T09:43:13.548Z</updated>
   <id>http://www.wxminapp.com/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>centos 源码安装git</title>
+    <link href="http://www.wxminapp.com/2016/12/26/centos-%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85git/"/>
+    <id>http://www.wxminapp.com/2016/12/26/centos-源码安装git/</id>
+    <published>2016-12-26T09:37:55.000Z</published>
+    <updated>2016-12-26T09:43:13.548Z</updated>
+    
+    <content type="html"><![CDATA[<p>Centos 6.5默认安装的是git 1.7.X 版本，使用过程中会有一些奇怪的问题，对于用户名、密码支持不是很友好。<br>将Centos6.5上的git更新到最新，方法如下：</p>
+<ol>
+<li><p>安装编译git时需要的包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel</div><div class="line"># yum install  gcc perl-ExtUtils-MakeMaker</div></pre></td></tr></table></figure>
+</li>
+<li><p>删除已有的git</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum remove git</div></pre></td></tr></table></figure>
+</li>
+<li><p>下载git源码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># cd /usr/src</div><div class="line"># wget https://www.kernel.org/pub/software/scm/git/git-&#123;最新&#125;.tar.gz</div><div class="line"># tar xzf git-2.0.5.tar.gz</div></pre></td></tr></table></figure>
+</li>
+<li><p>编译安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># cd git-2.0.5</div><div class="line"># make prefix=/usr/local/git all</div><div class="line"># make prefix=/usr/local/git install</div><div class="line"># echo &quot;export PATH=$PATH:/usr/local/git/bin&quot; &gt;&gt; /etc/bashrc</div><div class="line"># source /etc/bashrc</div></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Centos 6.5默认安装的是git 1.7.X 版本，使用过程中会有一些奇怪的问题，对于用户名、密码支持不是很友好。&lt;br&gt;将Centos6.5上的git更新到最新，方法如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;安装编译git时需要的包&lt;/p&gt;
+&lt;figure class
+    
+    </summary>
+    
+    
+      <category term="绝对有效" scheme="http://www.wxminapp.com/tags/%E7%BB%9D%E5%AF%B9%E6%9C%89%E6%95%88/"/>
+    
+  </entry>
   
   <entry>
     <title>我的第一个博客</title>
